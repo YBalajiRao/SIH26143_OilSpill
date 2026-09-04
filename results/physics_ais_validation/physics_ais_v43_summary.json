@@ -1,0 +1,90 @@
+{
+  "pipeline_version": "v4.3 (Release-Window Constrained Attribution)",
+  "protocol": {
+    "model_checkpoint": "D:\\SIH26143_OilSpill\\models\\checkpoints\\perception_frozen_E5_2.pth",
+    "input_normalization": "Raw [0,1]",
+    "segmentation_threshold": 0.5,
+    "morphological_operations": "NONE / 0 px",
+    "sar_observation_time": "2018-12-07 12:00:00",
+    "temporal_window_hours": 6.0
+  },
+  "case_metadata": {
+    "scene": "2018_12_07.tif",
+    "patch_index": 482,
+    "observed_centroid": {
+      "lat": 28.39867197875166,
+      "lon": -88.36600361663653
+    },
+    "gt_area_km2": 3.716,
+    "pred_area_km2": 2.5403,
+    "gt_pixel_count": 37160,
+    "pred_pixel_count": 25403,
+    "model_age_proxy_hours": 7.7173955234052025,
+    "inferred_release_time": "2018-12-07 04:16:57.376115742",
+    "slick_orientation_deg": 149.31861543322023
+  },
+  "backward_source_reconstruction": {
+    "origin_peak": {
+      "lat": 28.471181938911023,
+      "lon": -88.28313743218807,
+      "disp_from_obs_km": 11.430722183167914
+    },
+    "particle_centroid": {
+      "lat": 28.46789038244928,
+      "lon": -88.2832451403271,
+      "disp_from_obs_km": 11.16802737959247
+    },
+    "containment_radii_centroid_km": {
+      "r50": 0.3661562790094169,
+      "r90": 1.1659856648126583,
+      "r95": 2.2782020544168047,
+      "min": 0.011199470147874415,
+      "max": 6.74978346941702
+    }
+  },
+  "forward_drift_projection_km": {
+    "t_00h": 0.10693710835232081,
+    "t_06h": 4.679893410219297,
+    "t_12h": 8.657841005021153,
+    "t_18h": 10.700586209269572,
+    "t_24h": 11.550732533901382
+  },
+  "contemporaneous_ais_attribution": {
+    "contemporaneous_vessels_searched": 253,
+    "top_candidate": {
+      "vessel_name": "WEST CAPRICORN",
+      "mmsi": "352683000",
+      "cpa_dist_km": 3.1457443199040833,
+      "cpa_sog_kn": 0.1,
+      "cpa_cog_deg": 327.0,
+      "cpa_time": "2018-12-06 23:51:31",
+      "dt_hours_to_release": -4.423993365483889,
+      "proximity_score": 0.8108142510790257,
+      "kinematic_score": 0.06670335683270666,
+      "alignment_score": 0.974237606297553,
+      "temporal_score": 0.7619842392452948,
+      "attribution_score": 0.6607593651387047
+    },
+    "weight_sensitivity": {
+      "top1_stability_pct": 66.66666666666666,
+      "unique_top_mmsis": [
+        "352683000",
+        "367378180"
+      ]
+    },
+    "spatial_null_test": {
+      "n_trials": 1000,
+      "null_mean": 0.609843346102145,
+      "null_std": 0.07405403836283966,
+      "null_p95": 0.7551666759605151,
+      "null_p99": 0.8058582463638686,
+      "empirical_p_value": 0.24575424575424576,
+      "conclusion": "Empirical p = 0.2458 >= 0.05: Candidate score provides investigative prioritization without decisive spatial significance under this null."
+    }
+  },
+  "scientific_disclaimers": {
+    "attribution": "Prioritized candidate vessel for investigation; does not constitute causal or legal proof of responsibility.",
+    "age_proxy": "Model-derived empirical proxy; not a verified release timestamp.",
+    "forward_drift": "24-hour forward drift projection under available static/reanalyzed metocean forcing."
+  }
+}
