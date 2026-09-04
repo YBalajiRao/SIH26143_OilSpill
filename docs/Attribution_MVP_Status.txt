@@ -1,0 +1,8 @@
+﻿ATTRIBUTION MVP — STATUS
+- Script: scripts/run_attribution_mvp.py
+- Perception: E5_2 (83.49% val mIoU clean)
+- Drift: synthetic Euler hindcast (src/drift/probabilistic_drift.py)
+- AIS: mock (src/ais/vessel_ranking.py)
+- Figure: results/figures/attribution_mvp_demo.png
+- NEXT: real AIS window + ERA5/CMEMS for one Gulf date
+- NOT claimed: real culprit ID accuracy

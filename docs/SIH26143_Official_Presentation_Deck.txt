@@ -1,0 +1,87 @@
+﻿================================================================================
+SIH26143 — OFFICIAL 10-SLIDE IDEA PRESENTATION DECK
+National Technical Research Organisation (NTRO) | Track: T7
+Title: Degradation-Aware Multimodal Learning for Marine Oil-Spill Detection and Vessel Attribution Using Satellite Imagery and AIS Data
+================================================================================
+
+SLIDE 1: TITLE & TEAM IDENTITY
+--------------------------------------------------------------------------------
+- Problem Statement ID: SIH26143 (NTRO)
+- Thematic Track: T7 — Energy, Sustainability and Climate Action
+- Title: Degradation-Aware Multimodal Learning for Marine Oil-Spill Detection and Vessel Attribution Using Satellite Imagery and AIS Data
+- Proposed Architecture: Physio-GraphSpill
+- Team & Institution Details
+
+SLIDE 2: PROBLEM STATEMENT & NTRO REQUIREMENTS
+--------------------------------------------------------------------------------
+- Background: Marine oil spills inflict devastating damage on coastal ecosystems, yet often remain un-attributed to polluting vessels.
+- Core NTRO Challenge: Build an automated software pipeline to:
+  1. Detect & characterize oil spills from Sentinel-1 SAR imagery.
+  2. Compute geometric properties (Area, Elongation, Orientation) & Slick Age.
+  3. Perform Backward Lagrangian Drift Hindcasting (-24h Origin) & Forward Flow Forecasting (+24h Impact).
+  4. Reconstruct AIS traffic around release origin window, filter irrelevant traffic, and rank suspect vessels.
+  5. Provide an interactive visual decision support interface.
+
+SLIDE 3: PHYSIO-GRAPHSPILL NOVEL ARCHITECTURE
+--------------------------------------------------------------------------------
+- Perception: ResNet-34 Encoder + Atrous Degradation-Aware Feature Modulation (DAFM) + ASPP Bottleneck.
+- Uncertainty: Monte Carlo Dropout (T=10) spatial epistemic uncertainty maps (sigma) for boundary confidence.
+- Metocean Physics Engine: ERA5 10m Wind + CMEMS Surface Currents (3.5% wind leeway).
+- Attribution Engine: NTRO Multi-Factor Scoring (70% Proximity, 30% Kinematics, -20% AIS Gap Penalty).
+- Visual Evidence: Interactive Web Dashboard & 6-Panel Intelligence Map.
+
+SLIDE 4: SEGMENTATION BENCHMARK RESULTS (GULF OF MEXICO SAR)
+--------------------------------------------------------------------------------
+Evaluating on 7,249 validation patches (ResNet-34 backbones):
+
+| Model Architecture            | Val mIoU | Val Dice | Precision | Recall  |
+|-------------------------------|----------|----------|-----------|---------|
+| E1: U-Net Baseline            | 81.48%   | 76.00%   | 74.66%    | 82.39%  |
+| E2: DeepLabV3+ Baseline       | 80.16%   | 73.69%   | 69.86%    | 84.23%  |
+| E5.2: Physio-GraphSpill (Ours)| 83.49%   | 78.84%   | 78.47%    | 83.16%  |
+
+Key Takeaway: Physio-GraphSpill E5.2 outperforms standard U-Net by +2.01% mIoU and +2.84% Dice score.
+
+SLIDE 5: DEGRADATION STRESS TEST & ROBUSTNESS (EXPERIMENT E6)
+--------------------------------------------------------------------------------
+Performance under synthetic multiplicative speckle noise and low contrast:
+- U-Net collapses under severe noise (drops to 64.02% mIoU / 40.73% Dice).
+- DeepLabV3+ retains performance best (91.0% retention due to ASPP dilated context).
+- Physio-GraphSpill achieves 82.80% clean mIoU and 86.2% retention under stress.
+
+SLIDE 6: REAL-WORLD METOCEAN DRIFT HINDCASTING & FORECASTING
+--------------------------------------------------------------------------------
+- Target Scene: 2018_12_07.tif (Acquisition Date: 2018-12-07)
+- Observed Position: 28.1546°N, -89.3362°W | Slick Area: 7,769 px (77.69 km²) | Age: ~7.4h
+- Backward Particle Hindcast (-24h): 1,000 particles back-propagated under ERA5 wind (4.1 m/s) and Loop Current (0.16 m/s).
+- Reconstructed Origin Peak: 28.2946°N, -89.1962°W.
+- Forward Particle Forecast (+24h): Predicts future coastal drift impact zone.
+
+SLIDE 7: REAL MARINECADASTRE AIS TRAFFIC & VESSEL ATTRIBUTION
+--------------------------------------------------------------------------------
+- Ingested 2.22 GB decompressed MarineCadastre AIS data (441,000+ raw records, 555 unique ships).
+- Top 5 Ranked Suspect Vessels:
+  1. UBC BALBOA (MMSI 212363000) - Score: 0.5043 | Speed: 6.0 kn [CRITICAL SUSPECT]
+  2. TORM CAROLINE (MMSI 220396000) - Score: 0.4118 | Speed: 6.7 kn
+  3. COMMERCIAL_VESSEL (MMSI 667001254) - Score: 0.2998 | Speed: 5.6 kn
+  4. ELLA CLAIRE (MMSI 367561260) - Score: 0.2990 | Speed: 5.7 kn
+  5. JENNIFER TURECAMO (MMSI 367141250) - Score: 0.2978 | Speed: 5.8 kn
+
+SLIDE 8: SYSTEM INTERFACE & INTERACTIVE DASHBOARD
+--------------------------------------------------------------------------------
+- Live Interactive Web Application (`results/sih_interactive_dashboard.html`).
+- Master 6-Panel Intelligence Map (`poster/figures/sih26143_master_intelligence_map.png`).
+- Provides defense analysts at NTRO with transparent visual evidence, ship MMSI rankings, and slick age estimates.
+
+SLIDE 9: FEASIBILITY, SCALABILITY & DEPLOYMENT
+--------------------------------------------------------------------------------
+- Software-Only Architecture: Requires no hardware/IoT deployment.
+- High Efficiency: GPU inference time is ~16 ms per tile (61.2 FPS on RTX 3070).
+- Modular Design: Easily connects to real-time Copernicus CDS & MarineCadastre API streams.
+
+SLIDE 10: CONCLUSION & IMPACT
+--------------------------------------------------------------------------------
+- Physio-GraphSpill meets and exceeds every NTRO SIH26143 requirement.
+- Combines 83.49% mIoU SAR perception with real Lagrangian drift physics and 2.22 GB real MarineCadastre AIS vessel traffic.
+- Provides actionable marine environmental intelligence to combat un-attributable ocean pollution.
+================================================================================

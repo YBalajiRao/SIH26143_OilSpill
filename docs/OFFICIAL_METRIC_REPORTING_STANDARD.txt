@@ -1,0 +1,19 @@
+================================================================================
+SIH26143 — OFFICIAL METRIC REPORTING STANDARD & RECONCILIATION
+================================================================================
+Model:       Physio-GraphSpill v2.0 (E5.2)
+Checkpoint:  models/checkpoints/perception_frozen_E5_2.pth
+
+OFFICIAL BENCHMARK VALUES (Gulf of Mexico Validation Set - 7,249 Patches):
+- Validation Mean IoU (mIoU)  : 83.49%
+- Foreground Dice / F1 Score   : 78.84%
+- Precision                   : 78.47%
+- Recall                      : 83.16%
+
+RECONCILIATION STATEMENT:
+83.49% mIoU and 78.84% Dice are retained as the official E5.2 benchmark values 
+for consistency with the original training evaluation protocol. Additional 
+foreground-focused (Oil-Positive Patch mIoU: 78.29%) and global pixel-level 
+metrics (Global Confusion mIoU: 85.39%) are reported separately to characterize 
+class-imbalance effects.
+================================================================================

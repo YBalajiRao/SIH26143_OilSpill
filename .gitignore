@@ -1,0 +1,38 @@
+﻿# Python Compilation Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Virtual Environments & Packages
+.env
+.venv
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Local Large-Scale Datasets (Pillars 1, 2 & 3)
+data/
+data/raw/
+data/raw/gulf_mexico/
+data/raw/ais/
+data/raw/metocean/
+
+# Binary Model Weights & Checkpoints (Exceeded GitHub 100MB constraint)
+models/checkpoints/*.pth
+models/checkpoints/*.onnx
+
+# Temporary Processing & Cache Files
+dashboard/temp_upload_*
+results/physics_ais_validation/temp_upload_*
+*.tmp
+*.log
+
+# OS & Workspace files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

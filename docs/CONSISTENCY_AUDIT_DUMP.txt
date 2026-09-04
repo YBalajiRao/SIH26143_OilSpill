@@ -1,0 +1,117 @@
+================================================================================
+PACKAGE E — AIS RANKING (UBC BALBOA / SCORE RECONCILIATION)
+================================================================================
+
+--- FILE: D:\SIH26143_OilSpill\results\ais_outputs\real_vessel_ranking_final.csv ---
+columns: ['mmsi', 'lon', 'lat', 'sog_kn', 'vessel_name', 'is_real_data', 'ntro_attribution_score', 'investigation_evidence', 'rank']
+nrows: 159
+
+TOP-10 FULL ROWS:
+     mmsi       lon      lat  sog_kn      vessel_name  is_real_data  ntro_attribution_score                                               investigation_evidence  rank
+366984540 -87.71274 28.88504    10.3        BALTIMORE             1                0.268842 HIGH SUSPECT: Close proximity to origin density probability contour.     1
+368424000 -88.62909 29.39833     3.9  CROSBY GUARDIAN             1                0.242366 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     2
+477510600 -87.74022 29.11247     8.0     MSC KALAMATA             1                0.227584 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     3
+366939810 -88.64963 28.66313     7.4     SHEILA MORAN             1                0.222061 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     4
+367673080 -87.09297 29.90263     7.4       REDEMPTION             1                0.222060 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     5
+367389920 -88.45717 29.87726     3.6 ANDY & JOHNNY JR             1                0.222060 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     6
+367736740 -88.57457 29.33247     3.4     MISS HEATHER             1                0.207740 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     7
+368003250 -88.47723 29.50297     3.2         PAPA ROD             1                0.193051 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     8
+366815370 -88.46230 29.56982     3.2        INTEGRITY             1                0.193050 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     9
+566855000 -88.65361 28.53750     3.2      BOW PIONEER             1                0.193050 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.    10
+
+MATCHED NAME ROWS (0):
+No UBC/BALBOA/THOMAS match in this file.
+
+score-related columns: ['mmsi', 'lon', 'lat', 'sog_kn', 'ntro_attribution_score', 'rank']
+
+--- FILE: D:\SIH26143_OilSpill\results\ais_outputs\ntro_final_attribution_ranking.csv ---
+columns: ['mmsi', 'lon', 'lat', 'sog_kn', 'vessel_name', 'is_real_data', 'ntro_attribution_score', 'investigation_evidence', 'rank']
+nrows: 555
+
+TOP-10 FULL ROWS:
+     mmsi       lon      lat  sog_kn       vessel_name  is_real_data  ntro_attribution_score                                               investigation_evidence  rank
+212363000 -89.13997 28.36047     6.0        UBC BALBOA             1                0.504310 HIGH SUSPECT: Close proximity to origin density probability contour.     1
+220396000 -89.14621 28.39604     6.7     TORM CAROLINE             1                0.411837 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     2
+667001254 -90.18755 28.99323     5.6 COMMERCIAL_VESSEL             1                0.299750 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     3
+367016590 -89.59942 29.29311     5.3 COMMERCIAL_VESSEL             1                0.299002 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     4
+367561260 -90.19056 28.98360     5.7       ELLA CLAIRE             1                0.299002 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     5
+367141250 -89.30815 29.24381     5.8 JENNIFER TURECAMO             1                0.297760 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     6
+367627460 -88.95436 29.27271     5.1         BARRACUDA             1                0.296027 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     7
+367583170 -90.01144 27.94827     6.0   CONNOR BORDELON             1                0.293818 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     8
+367674670 -89.34961 29.29181     6.1           MATTHEW             1                0.291134 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     9
+367378180 -89.35065 29.27589     6.2      TOMMY ANDREW             1                0.287997 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.    10
+
+MATCHED NAME ROWS (6):
+     mmsi       lon      lat  sog_kn     vessel_name  is_real_data  ntro_attribution_score                                               investigation_evidence  rank
+212363000 -89.13997 28.36047     6.0      UBC BALBOA             1                0.504310 HIGH SUSPECT: Close proximity to origin density probability contour.     1
+220396000 -89.14621 28.39604     6.7   TORM CAROLINE             1                0.411837 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.     2
+564693000 -89.35496 28.72077    10.3    TORM THUNDER             1                0.045254 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.   184
+210234000 -89.89579 28.28036    12.3 UBC SANTA MARTA             1                0.006405 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.   480
+212602000 -89.41273 28.79155    12.8      UBC BREMEN             1                0.003915 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.   491
+209156000 -89.43261 28.81279    13.0   UBC STAVANGER             1                0.003022 LOW PROBABILITY: Vessel outside high-density spill drift trajectory.   499
+
+score-related columns: ['mmsi', 'lon', 'lat', 'sog_kn', 'ntro_attribution_score', 'rank']
+
+================================================================================
+PACKAGE F/G — RASTER METADATA (2018_08_21_.tif)
+================================================================================
+found tifs: ['D:\\SIH26143_OilSpill\\data\\raw\\gulf_mexico\\extracted\\train\\images\\2018_08_21_.tif', 'D:\\SIH26143_OilSpill\\data\\raw\\gulf_mexico\\extracted\\train\\masks\\2018_08_21_.tif']
+
+--- D:\SIH26143_OilSpill\data\raw\gulf_mexico\extracted\train\images\2018_08_21_.tif ---
+rasterio failed: No module named 'rasterio'
+GDAL failed: No module named 'osgeo'
+OpenCV only: shape=(4572, 5701) dtype=float32
+NO GEO METADATA available without rasterio/gdal — do NOT claim km2 until geotransform verified.
+
+--- D:\SIH26143_OilSpill\data\raw\gulf_mexico\extracted\train\masks\2018_08_21_.tif ---
+rasterio failed: No module named 'rasterio'
+GDAL failed: No module named 'osgeo'
+OpenCV only: shape=(4572, 5701) dtype=float32
+NO GEO METADATA available without rasterio/gdal — do NOT claim km2 until geotransform verified.
+
+================================================================================
+PACKAGE A/G — DATE AVAILABILITY (AUG vs DEC)
+================================================================================
+AIS files:
+  MarineCadastre_AIS_Gulf_2018_12.csv          0.02 MB
+  ais-2018-12-06.csv                         616.06 MB
+  ais-2018-12-06.csv.zst                      86.92 MB
+  ais-2018-12-07.csv                         731.05 MB
+  ais-2018-12-07.csv.zst                     102.39 MB
+  ais-2018-12-08.csv                         650.99 MB
+  ais-2018-12-08.csv.zst                      89.71 MB
+Environment files:
+  era5_cmems_20181207.nc                       0.92 MB
+
+August 2018 AIS present? False -> []
+August 2018 NetCDF present? False -> []
+
+================================================================================
+SCORE FORMULA (code truth)
+================================================================================
+S = 0.50*exp(-dist_km/8) + 0.25*exp(-((sog-5.8)**2)/12) + 0.25*max(0,1-delta_theta/90) - gap_penalty
+gap_penalty = 0.20 if ais_gap_flag==1 else 0.0
+NOTE: 0.50*0.798 + 0.25*0.996 + 0.25*0.744 = 0.834  WITHOUT gap penalty.
+If CSV final_score==0.5043, gap_penalty OR different component values must explain the difference.
+Do NOT put 0.834 on the poster unless CSV matches.
+
+================================================================================
+E5.2 METRICS SNIPPET
+================================================================================
+ epoch  train_loss  val_loss  val_mIoU  val_dice  val_precision  val_recall
+    10    0.139992  0.123092  0.827275  0.775550       0.774604    0.819423
+    11    0.136978  0.119311  0.833606  0.787508       0.780015    0.832218
+    12    0.129926  0.118330  0.834859  0.788442       0.784676    0.831576
+
+================================================================================
+E7_1 CSV FULL
+================================================================================
+            scene     mIoU     Dice
+   2018_09_26.tif 0.749690 0.680353
+ 2018_12_19_d.tif 0.752227 0.680632
+ 2018_12_19_e.tif 0.619344 0.397697
+2018_12_19_f_.tif 0.463358 0.000092
+     20191015.tif 0.578787 0.341702
+   20200224_b.tif 0.639632 0.453501
+    20200319b.tif 0.680404 0.540687
+mean mIoU = 64.05% over N=7

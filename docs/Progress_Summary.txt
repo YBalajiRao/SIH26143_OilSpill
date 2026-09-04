@@ -1,0 +1,22 @@
+﻿================================================================================
+E5.2 COMPLETE — PERCEPTION FROZEN
+================================================================================
+Checkpoint: models/checkpoints/E5_2_proposed_best.pth
+Best Val mIoU:  0.8349 (83.49%)
+Best Val Dice:  0.7884 (78.84%)
+Precision:      0.7847 | Recall: 0.8316
+Protocol: 12 epochs, ResNet-34, Combo BCE+Dice+Boundary, Gulf val CSV
+
+Clean ranking:
+  1) E5.2  83.49%
+  2) E5.1  82.10%
+  3) U-Net 81.48%
+  4) E5    80.49%
+  5) DL3+  80.16%
+
+NEXT (locked):
+  1. E6 stress test with E5_2_proposed_best.pth
+  2. Attribution MVP (SIH-critical)
+  3. Do NOT bulk-download Zenodo 40GB
+  4. Optional later: +epochs finetune, Eastern Med, test scenes
+================================================================================

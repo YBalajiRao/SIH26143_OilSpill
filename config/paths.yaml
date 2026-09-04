@@ -1,0 +1,14 @@
+﻿data:
+  raw:        data/raw
+  processed:  data/processed
+  splits:     data/splits
+  metadata:   data/metadata
+models:
+  checkpoints: models/checkpoints
+  exports:     models/exports
+results:
+  metrics:     results/metrics
+  figures:     results/figures
+  drift:       results/drift_outputs
+  ais:         results/ais_outputs
+  logs:        results/logs
